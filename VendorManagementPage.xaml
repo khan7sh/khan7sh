@@ -1,0 +1,31 @@
+﻿<Page x:Class="BasicVendorInventoryPlatform.Views.VendorManagementPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Vendor Management">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Vendor Management" Style="{StaticResource HeaderTextBlockStyle}"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+            <Button Content="Add Vendor" Click="AddVendor_Click" Style="{StaticResource BaseButtonStyle}" Margin="0,0,10,0"/>
+            <Button Content="Edit Vendor" Click="EditVendor_Click" Style="{StaticResource BaseButtonStyle}" Margin="0,0,10,0"/>
+            <Button Content="Delete Vendor" Click="DeleteVendor_Click" Style="{StaticResource BaseButtonStyle}"/>
+        </StackPanel>
+
+        <ListView x:Name="VendorListView" Grid.Row="2" Style="{StaticResource BaseListViewStyle}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="200"/>
+                    <GridViewColumn Header="Website" DisplayMemberBinding="{Binding Website}" Width="200"/>
+                    <GridViewColumn Header="Last Review Date" DisplayMemberBinding="{Binding LastReviewDate, StringFormat=d}" Width="150"/>
+                    <GridViewColumn Header="Rating" DisplayMemberBinding="{Binding Rating}" Width="100"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

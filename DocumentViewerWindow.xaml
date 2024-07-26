@@ -1,0 +1,6 @@
+﻿<Window x:Class="BasicVendorInventoryPlatform.Views.DocumentViewerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Document Viewer" Height="450" Width="800">
+    <WebBrowser x:Name="PdfViewer"/>
+</Window>

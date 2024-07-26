@@ -1,0 +1,31 @@
+﻿<!-- VendorDetailsPage.xaml -->
+<Page x:Class="BasicVendorInventoryPlatform.Views.VendorDetailsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Vendor Details">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Vendor Details" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+            <TextBlock Text="{Binding Name}" FontSize="18"/>
+            <TextBlock Text="{Binding Website}" Margin="0,10,0,0"/>
+            <TextBlock Text="{Binding LastReviewDate, StringFormat=Last Review: {0:d}}" Margin="0,10,0,0"/>
+            <TextBlock Text="{Binding Rating, StringFormat=Rating: {0:F1}}" Margin="0,10,0,0"/>
+
+            <TextBlock Text="Products" FontSize="18" FontWeight="Bold" Margin="0,20,0,10"/>
+            <ListView ItemsSource="{Binding Products}" MaxHeight="200">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Description}"/>
+                            <TextBlock Text="{Binding Rating, StringFormat=Rating: {0:F1}}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Content="Generate Report" Click="GenerateReport_Click" 
+                    Margin="0,20,0,0" Padding="10,5" HorizontalAlignment="Left"/>
+        </StackPanel>
+    </Grid>
+</Page>
